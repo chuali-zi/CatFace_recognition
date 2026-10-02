@@ -1,0 +1,777 @@
+{
+  "review_date": "2026-09-22",
+  "reviewer": "Codex visual inspection",
+  "selection_seed": 20260922,
+  "selection_count": 128,
+  "method": "Complete-frame contact sheets, publisher boxes visible; no model predictions shown. Zoomed reflection and grayscale-photo ambiguities. Review covers visible domestic cat faces, not liveness or identity.",
+  "decisions": [
+    {
+      "sample_id": "catflw:00145ce73c8c1eaf9a52",
+      "review_index": 0,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:cf33a9f433080398976f",
+      "review_index": 1,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:57008dbd66e9e60f5e05",
+      "review_index": 2,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:bba928094de6f6c9b085",
+      "review_index": 3,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:f47e8da14b96b7218ed3",
+      "review_index": 4,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:5e987aa4d5bcd82f5303",
+      "review_index": 5,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:3c68551ca3c9d215c692",
+      "review_index": 6,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:86050f325610e4ab9d86",
+      "review_index": 7,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:b306bb1f465e2cfa4a85",
+      "review_index": 8,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:059f49649ae2bf0bd612",
+      "review_index": 9,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:187b2bf438cf65a8ee40",
+      "review_index": 10,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:1ce711dac475ecfd0169",
+      "review_index": 11,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:433ad6cdac5732db6316",
+      "review_index": 12,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:4e1f68d0d4a5ec722772",
+      "review_index": 13,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:e887cf778c85e8a444fc",
+      "review_index": 14,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:b230a08ff9faea9b10ab",
+      "review_index": 15,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:a29601d6d61783544c7e",
+      "review_index": 16,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:452a1a347f0304c1d005",
+      "review_index": 17,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:acafa5dbb5cc42939933",
+      "review_index": 18,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:497990c1413ccadfac17",
+      "review_index": 19,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:b60e2b54297873bb037c",
+      "review_index": 20,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:f56593ac42176e2c70b9",
+      "review_index": 21,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:6e798bc0783aab9fc219",
+      "review_index": 22,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:3c3dc8510128df1f2af7",
+      "review_index": 23,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:f6cbb8e64ed96ac87963",
+      "review_index": 24,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:9f39bc4d51b2104e5ffa",
+      "review_index": 25,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:d504c67e0bb10ad8b496",
+      "review_index": 26,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:f319c55c83e8d3d8514a",
+      "review_index": 27,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:63a8cdc8bf96386d2179",
+      "review_index": 28,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:ead03c061eb70ae54863",
+      "review_index": 29,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:40e6f7ecbac8c59f4543",
+      "review_index": 30,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:4e42f341afd798dd3434",
+      "review_index": 31,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:bc11789611352bbed06c",
+      "review_index": 32,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:2d606dab1aee99af8fd1",
+      "review_index": 33,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:7d2483d8795840c63ff8",
+      "review_index": 34,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:6c494ef7d96dbcfdbe1a",
+      "review_index": 35,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:49f3c8d04b23b2b18d80",
+      "review_index": 36,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:ab677ce5b93840053b82",
+      "review_index": 37,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:fdf6ba57c680b1ee6a64",
+      "review_index": 38,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:48a70aa6c002888aa0d4",
+      "review_index": 39,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:0253f2082440457161eb",
+      "review_index": 40,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:3a4064fff5fe55e031e3",
+      "review_index": 41,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:0d6698ec12051b4bb445",
+      "review_index": 42,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:b30e9dd90fffa8b01d28",
+      "review_index": 43,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:e8bb0ec7a2332a216ea0",
+      "review_index": 44,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:c4b3f77fab5af14fe219",
+      "review_index": 45,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:aa0c973ca0cc2e2bf6aa",
+      "review_index": 46,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:d23ca7cd16d6f5c1ea31",
+      "review_index": 47,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:9533a595ec6526ed7a71",
+      "review_index": 48,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:3d4b4b5e107d22b80c94",
+      "review_index": 49,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:53a31cc3c9a635f31523",
+      "review_index": 50,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:808fe86e8ea680f47b56",
+      "review_index": 51,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:60c349c616bbc06de766",
+      "review_index": 52,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:cb1fa5bb49d115c1364c",
+      "review_index": 53,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:cbb340e0eda28d9e3e38",
+      "review_index": 54,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:6fae50d7d311a62fd50c",
+      "review_index": 55,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:11981a6a1e2db781032b",
+      "review_index": 56,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:7cce85692a808acd0956",
+      "review_index": 57,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:9b54fe000006a077851e",
+      "review_index": 58,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:412a5f03254c78e6584b",
+      "review_index": 59,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:6ab4bc82ce5c1c1aacd0",
+      "review_index": 60,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:d5cab9019018a48f30e6",
+      "review_index": 61,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:62e6cb31921c54108778",
+      "review_index": 62,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:7e32f2500fb9f5c341d1",
+      "review_index": 63,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:a4cd54bcf878f390f15c",
+      "review_index": 64,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:7248f947bf1eaf17f563",
+      "review_index": 65,
+      "annotation_scope": "single_target",
+      "note": "Additional mirrored face; exclude from exhaustive precision subset."
+    },
+    {
+      "sample_id": "catflw:10181e0e48d5d292c259",
+      "review_index": 66,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:8379ed1a442a75d99e14",
+      "review_index": 67,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:9c38038e4900bda09450",
+      "review_index": 68,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:92a9d807e68a5858c78e",
+      "review_index": 69,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:f878f0a424b0257b11e4",
+      "review_index": 70,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:56b9d187e18bbddd0dd8",
+      "review_index": 71,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:1fc20cfe84647569499d",
+      "review_index": 72,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:2e738750a4b6af986aff",
+      "review_index": 73,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:6fda16c3cbba11ee3926",
+      "review_index": 74,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:44961b8adb43a32f0070",
+      "review_index": 75,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:ce033bef66887319f643",
+      "review_index": 76,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:146462ab85de12c6da6a",
+      "review_index": 77,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:3f8626df95b4b1cdc1a0",
+      "review_index": 78,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:8aceed2d7afe5a09882e",
+      "review_index": 79,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:26d4312c654b2525f2fb",
+      "review_index": 80,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:e84ce88b5bd05996ad65",
+      "review_index": 81,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:a74983743c36131de46d",
+      "review_index": 82,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:af95dcb85b3115c5ec6b",
+      "review_index": 83,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:c4d01f79b7f212a9814c",
+      "review_index": 84,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:919dc69bbc39d067d21d",
+      "review_index": 85,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:57a5df978bd604aef505",
+      "review_index": 86,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:d075275674733b250975",
+      "review_index": 87,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:359b6e609838e7620fc8",
+      "review_index": 88,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:ce51be33a54c754cd258",
+      "review_index": 89,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:907cef161b0e2a56169a",
+      "review_index": 90,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:d6e25eb13a8f76bc2bdf",
+      "review_index": 91,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:224a4b24ec537899f334",
+      "review_index": 92,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:6e5b734e0aeaee8d9a55",
+      "review_index": 93,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:e282d38dbb675237d328",
+      "review_index": 94,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:284018a0113eeba94e40",
+      "review_index": 95,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:8ca7ff31658c7d93170f",
+      "review_index": 96,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:97a2dada89a3fa3a05c5",
+      "review_index": 97,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:8389ea9531c5f9ca9714",
+      "review_index": 98,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:2a28c293dd81f045823c",
+      "review_index": 99,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:8e3d882e404460e956d6",
+      "review_index": 100,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:8cfe5900a21517198961",
+      "review_index": 101,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:f1ad5196957354d04bd3",
+      "review_index": 102,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:3d478e629d78fba19072",
+      "review_index": 103,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:b710aeb4d90ac0c3617d",
+      "review_index": 104,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:70dad4042b2d1a98de4b",
+      "review_index": 105,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:d00f2273f532ed9b1308",
+      "review_index": 106,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:73267cc3ecd35b6aad21",
+      "review_index": 107,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:a1e06df94dc2d5007760",
+      "review_index": 108,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:2e615f74caab14519307",
+      "review_index": 109,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:8eae2512f421c29a45a5",
+      "review_index": 110,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:259685cf96b683e31941",
+      "review_index": 111,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:0e3276b1cd9e91669e9e",
+      "review_index": 112,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:d5e0d76046f712d692c5",
+      "review_index": 113,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:4f0f54cd87e82197a12e",
+      "review_index": 114,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:97bce25c647fe2288a45",
+      "review_index": 115,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:6cbc4407c16dcdcc438e",
+      "review_index": 116,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:f6d997093680d4430f98",
+      "review_index": 117,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:b68aa9a74caf50c9be00",
+      "review_index": 118,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:96742b2dd651861a8c5e",
+      "review_index": 119,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:c0501daa5b903f55e442",
+      "review_index": 120,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:d41db409ac606229afff",
+      "review_index": 121,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:85d673cbedcbe932372b",
+      "review_index": 122,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:1bd14d966f4a3152e9fc",
+      "review_index": 123,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:fe66e27ede92f2ffeb74",
+      "review_index": 124,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:6e6642977b48a5f44549",
+      "review_index": 125,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:84848596deddccb8daf6",
+      "review_index": 126,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    },
+    {
+      "sample_id": "catflw:f09511cedfc45576024d",
+      "review_index": 127,
+      "annotation_scope": "exhaustive",
+      "note": "One visible domestic cat face; publisher box accepted."
+    }
+  ]
+}
