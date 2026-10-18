@@ -1,6 +1,6 @@
 # 同学复测：Ubuntu20.04 / ARM64 / 系统Python3.8
 
-2026-10-18报告只执行了preflight：aarch64、glibc2.31，但Python3.8.10不满足3.10–3.12；ORT未安装，模型未加载。旧包未坏，不能把这个结果称作识别失败或ARM全部通过。
+2026-10-18首份报告在系统Python3.8下preflight受阻。最新v3报告已用原有Python3.11.17环境完成preflight及Small160/Large224的CPU模型加载；尚未执行图片识别。v3自带离线安装曾在`terminfo/1/1178`处因缺少符号链接父目录失败，本修订已补上目录创建。
 
 请把**新版完整ZIP**解压到板子上新的可写、区分大小写的Linux目录（如home/ext4），进入含run.sh的包根目录。不要覆盖旧包；不要直接在NTFS/FAT/Windows共享盘安装运行时。包内已含真实冻结模型、ARM64 CPython3.11.17压缩包和固定依赖wheels，不含照片、旧图库或现场身份数据。
 
@@ -18,6 +18,8 @@ bash run.sh --mode model-check --models small160 large224 --threads 2 --executio
 ```
 
 bootstrap预期PASS，并在报告中记录真实新Python/NumPy/Pillow/ORT/psutil版本和CPUExecutionProvider。已存在.runtime时拒绝覆盖；成功后直接用run.sh复测。失败时保留报告，重新试验使用新解压目录，不修改系统环境。
+
+如果此前在v3遇到`../a/adm1178`的`FileNotFoundError`，用本修订完整包在新目录执行以上步骤即可；旧目录里的报告和失败的`.runtime-install-*`可保留。此前模型加载PASS来自已有环境，不能代替本次bootstrap复测。
 
 新preflight预期PASS只是候选平台满足条件；dependencies等SKIP仍然是未执行。model-check预期两组model_load PASS，并记录实际CPU provider、线程、图接口，inference_executed=false；它仍未识别任何图片。若有E_DEPS/E_MODEL，报告含脱敏错误分类；详细日志留在本机private/，不要打包整个目录。
 

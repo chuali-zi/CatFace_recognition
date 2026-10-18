@@ -50,7 +50,8 @@ def build(parent_zip, runtime, out):
     shutil.copy2(ROOT/'experiments/devicekit/requirements.txt',kit/'requirements-device.txt')
     (kit/'README.md').write_text('# CatFace v3 ARM64科研测试包\n\n先读 QUICKSTART.md。'
         '含冻结真实模型、ARM64 CPython3.11独立运行时及离线wheels；不含照片或图库。'
-        '用户2026-10-18报告仅为Python3.8下preflight BLOCKED；新版ARM运行仍待同学复测。'
+        '2026-10-18板端已在已有Python3.11环境通过两模型加载，图片识别未执行；'
+        '本修订修复离线解包时符号链接父目录缺失，包内ARM离线安装仍待同学复测。'
         '不控制门，不替换系统Python，不自动打开相机。详见 MANUAL.zh.md、AGENT.md 和 docs/board-test-2026-10-18.md。\n',encoding='utf-8')
     support=kit/'runtime-support'; support.mkdir()
     runtime_spec=json.loads((runtime/'MANIFEST.json').read_text(encoding='utf-8'))

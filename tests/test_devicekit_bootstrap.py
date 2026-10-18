@@ -31,6 +31,24 @@ def test_runtime_extract_preserves_internal_link_without_execution(tmp_path):
     assert (out/'python/bin/python3').read_text()=='not an executable'
 
 
+def test_runtime_extract_creates_parent_for_link_only_directory(tmp_path, monkeypatch):
+    # The shipped runtime has no directory entries for link-only terminfo paths.
+    src=tmp_path/'runtime.tar.gz'; out=tmp_path/'unpack'; out.mkdir()
+    archive(src,[('python/share/terminfo/1/1178','link','../a/adm1178'),
+                 ('python/share/terminfo/a/adm1178','file','terminal data')])
+    links=[]
+
+    def create_link(path, target):
+        # Check the prerequisite on Windows too, without symlink privileges.
+        assert path.parent.is_dir()
+        assert (path.parent/target).read_text()=='terminal data'
+        links.append((path.relative_to(out).as_posix(),target))
+
+    monkeypatch.setattr(Path,'symlink_to',create_link)
+    unpack(src,out)
+    assert links==[('python/share/terminfo/1/1178','../a/adm1178')]
+
+
 @pytest.mark.parametrize('entries',[
     [('../escape','file','bad')],
     [('/python/bin/bad','file','bad')],

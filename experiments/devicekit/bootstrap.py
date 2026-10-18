@@ -62,7 +62,9 @@ def unpack(archive, destination):
                 target.chmod(m.mode & 0o777)
         for m in members:
             if m.issym():
-                destination.joinpath(*PurePosixPath(m.name).parts).symlink_to(m.linkname)
+                target = destination.joinpath(*PurePosixPath(m.name).parts)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.symlink_to(m.linkname)
 
 
 def main():

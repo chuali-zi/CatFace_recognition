@@ -4,4 +4,4 @@
 
 包完整性PASS只证明封存字节。bootstrap PASS只证明包内安装与依赖导入。model-check PASS只证明真实CPU ONNX session和图接口；没有图片推理。现场DIR/FPIR需要真实独立场次、已确认身份和完整分母；不从历史图或x86速度外推。
 
-当前ARM报告仅旧版preflight BLOCKED；v3 ARM运行时、CPU指令/动态库、实际图像识别、持续性能及相机仍需目标设备执行。无数据的历史模式应BLOCKED，无相机请求应SKIP。不操作猫门/门锁/GPIO。
+最新ARM报告已在已有Python3.11环境下完成preflight及两模型CPU加载；图片推理未执行。v3离线解包的符号链接父目录问题已修复并在Linux核验全部运行时条目，包内ARM运行时的完整离线安装/导入仍待目标设备复测；实际图像识别、持续性能及相机也待验证。无数据的历史模式应BLOCKED，无相机请求应SKIP。不操作猫门/门锁/GPIO。
