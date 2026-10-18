@@ -10,6 +10,8 @@
 
 飞腾派离线采集入口：[一键测试脚本](experiments/board/README.md)。离线包自带两种参照模型、冻结图库、149 张原图和可选 ARM64 依赖，板端执行 `bash run.sh`，输出识别指标、耗时、内存和设备信息。
 
+2026-10-18 收到的实际板端报告只有 preflight：Ubuntu20.04/aarch64/glibc2.31，因系统 Python3.8.10 低于要求而 BLOCKED，模型与识别均未执行。新版完整科研测试包提供包内独立 Python3.11/ARM64 离线依赖，保留真实冻结模型但不附照片或图库；按[同学复测步骤](experiments/devicekit/QUICKSTART.md)先准备环境、再做真实模型检查，结论和边界见[板端报告分析](docs/board-test-2026-10-18.md)及[结果协议](docs/device-test-results.md)。新版 ARM 运行仍待同学验证。
+
 2026-09-22 已在本机 CPU 完成普通分类与 ArcFace 各 30 轮训练，并完成重复图库及 3/5 张登记图的严格配对对照。ArcFace 单组开发图库的优势没有稳定保持，见[图库稳定性报告](docs/gallery-study-2026-09-22.md)。后续四种主干/尺寸组合中，Large-224 提高了开发集平均正确接受率，但增加 CPU 成本且拒识未达标；Small-160 保留为速度参照。另完成 30 轮相似关系蒸馏，未取得净收益，结果见[本机主干与蒸馏对照](docs/backbone-study-2026-09-22.md)。
 
 后续已完成 **SSDLite320 猫脸检测8轮CPU微调及ONNX导出**。在未按旧Haar命中筛选的CatFLW留出312图中，标注脸覆盖从Haar参照的185/312提升至302/312；人工核对63图为TP60/FP2/FN3。数据/指标边界和实测见[完整画面检测报告](docs/detection-study-2026-09-22.md)。

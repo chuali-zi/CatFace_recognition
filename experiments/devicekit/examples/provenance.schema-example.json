@@ -1,0 +1,27 @@
+{
+  "sources": [
+    "REPLACE with verified producer and exact source records for selected models"
+  ],
+  "licenses": [
+    "REPLACE with actual source license terms and approved research distribution basis"
+  ],
+  "distribution_approved": false,
+  "gallery_evidence": {
+    "small160": [
+      {
+        "path": "evidence/REPLACE-calibration-report.json",
+        "sha256": "REPLACE_WITH_ACTUAL_SHA256"
+      },
+      {
+        "path": "evidence/REPLACE-protocol.json",
+        "sha256": "REPLACE_WITH_ACTUAL_SHA256"
+      },
+      {
+        "path": "evidence/REPLACE-predictions.jsonl",
+        "sha256": "REPLACE_WITH_ACTUAL_SHA256"
+      }
+    ]
+  },
+  "note": "Record real sources, licenses and intended research use. Never fabricate legal clearance. gallery_evidence is required only when a packaged gallery is consumed.",
+  "distribution_approved_semantics": "Informational public/unrestricted redistribution declaration; not a prerequisite for authorized local inference"
+}

@@ -1,0 +1,2 @@
+{"sample_id":"sample-101","path":"REPLACE/query-cat-a.jpg","cat_id":"cat-a","role":"known","session_id":"session-test-1","event_id":"event-test-1","identity_verified":false}
+{"sample_id":"sample-102","path":"REPLACE/query-stranger-b.jpg","cat_id":"stranger-test-b","role":"unknown","session_id":"session-test-2","event_id":"event-test-2","identity_verified":false}

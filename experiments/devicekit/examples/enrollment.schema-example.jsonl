@@ -1,0 +1,3 @@
+{"sample_id":"sample-001","path":"REPLACE/gallery-cat-a-session-1.jpg","cat_id":"cat-a","split":"gallery","session_id":"session-enroll-1","event_id":"event-enroll-1","identity_verified":false}
+{"sample_id":"sample-002","path":"REPLACE/gallery-cat-a-session-2.jpg","cat_id":"cat-a","split":"gallery","session_id":"session-enroll-2","event_id":"event-enroll-2","identity_verified":false}
+{"sample_id":"sample-003","path":"REPLACE/calibration-stranger-a.jpg","cat_id":"stranger-cal-a","split":"calibration_unknown","session_id":"session-cal-1","event_id":"event-cal-1","identity_verified":false}

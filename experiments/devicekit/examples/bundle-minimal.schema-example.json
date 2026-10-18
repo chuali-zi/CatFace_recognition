@@ -1,0 +1,7 @@
+{
+  "detector": "detector/model.onnx",
+  "models": {
+    "small160": {"model": "models/small160/model.onnx"}
+  },
+  "diagnostic_only": true
+}
