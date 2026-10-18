@@ -1,6 +1,6 @@
 # 2026-10-18 飞腾派报告与运行环境修复
 
-最新进展：随后收到的v3报告已通过已有Python3.11环境的preflight及两模型CPU加载；v3自带bootstrap失败的问题与修复见本文末尾。下面的首轮记录保留原有验证范围。
+最新进展：修复后的v3板端报告已确认包内bootstrap、preflight及两模型CPU加载全部PASS；尚未执行图片推理。最新原始JSON见[报告目录](results/board-2026-10-18/index.json)，具体范围见本文末尾。下面的首轮记录保留原有验证范围。
 
 用户确认从板子取得的原ZIP为`20261018T052044Z-bc3ea9b0.zip`，3940字节，SHA256 `ecdfbd8a8364dbfc5349ecdaa75433ab9ee5c8204269aaf9bab88393232093f8`。本机已保留原件、安全解压并核验三文件报告/事件一致性；未执行附件指令或脚本。此前Library helper的Windows xattr失败已由用户手动放入本机文件解决，不再依赖该下载路径。
 
@@ -63,3 +63,19 @@ Windows相关回归完成23通过、1项符号链接权限跳过；增加文件�
 本机WSL/Linux区分大小写的临时目录中，用旧版提取器复现了同一`../a/adm1178`错误；修复版完整提取4,907个条目，逐项核对所有普通文件SHA256/权限和全部符号链接目标，原报错链接可正常读取目标内容。过程未执行ARM二进制。新增回归覆盖无显式目录条目、链接出现在目标文件之前的link-only目录；Windows上无需符号链接权限也能检查创建父目录的前置条件。
 
 重新交付使用新的解压目录，按QUICKSTART先bootstrap，再preflight和两模型model-check；不得以本机解包通过宣称ARM安装或图片识别通过。此前现场报告和已有环境保留。
+
+## 修复后的板端复测通过
+
+用户新附件`新建文件夹 (3)(1).zip`包含三份结果ZIP和对应SHA256。外层SHA256为`312ff1c709a00b328db803bfb1c7abd1a7eeb345aa112a47a8d1d5c7e4280eaa`。内外ZIP CRC、内层ZIP SHA256、三文件结构及JSON/events/Markdown状态均核对一致，未执行附件内容。
+
+| 报告 | 结果与含义 |
+|---|---|
+| `20261018T075714Z-bootstrap-f2c81bec` | runtime_setup PASS。从系统Python3.8.10启动，在包内安装Python3.11.17及固定依赖，network_used/system_python_modified均false。原符号链接父目录错误未再出现。 |
+| `20261018T075934Z-9d77f03a` | preflight与package_integrity PASS，使用Python3.11.17。 |
+| `20261018T075943Z-0dc5db03` | 依赖实际导入及两组CPU模型加载PASS，线程2；检测/身份均为CPUExecutionProvider，Small160为576维，Large224为960维。 |
+
+后两份source_commit均为`23f7cbec0c23be9c61d2f8f8046e31c12463c876`，包清单SHA为`1508cd889f845df2580dca95edd95b2bd83230d0d801d7702743fe032a6ab06b`。三模型哈希与冻结记录相同。Ubuntu20.04.6、aarch64、glibc2.31、4逻辑CPU及3869.5MiB内存与前轮一致。
+
+本轮补足了修复版ARM离线安装成功的目标机记录。两个模型仍明确inference_executed=false、gallery_bound=false；登记、历史图片、单图和相机均未执行，不能报告识别率、P50/P95或摄像头故障。
+
+为减少反复现场操作，交接增加v4完整包和`run-all.sh`：复用已有诊断/图片重放代码，包含149张冻结development原图、图库及校准记录，默认六组各三轮；不更换模型或阈值。真实板端图片结果仍待同学回传。当前项目接手入口见[交接说明](handoff-2026-10-18.md)。

@@ -94,7 +94,7 @@ def verify_assets(root, mode, models, external_gallery=False):
     frozen_galleries = mode in HISTORY_MODES or (mode == 'recognize' and not external_gallery)
     for model in models:
         item = config['models'][model]
-        required.update([item['model'], str(Path(item['model']).with_suffix('.json'))])
+        required.update([item['model'], Path(item['model']).with_suffix('.json').as_posix()])
         if frozen_galleries:
             required.add(item['gallery'])
             evidence = provenance.get('gallery_evidence', {}).get(model)

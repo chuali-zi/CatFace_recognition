@@ -1,0 +1,38 @@
+{
+  "schema_version": 3,
+  "mode": "bootstrap",
+  "run_id": "20261018T075714Z-bootstrap-f2c81bec",
+  "environment": {
+    "system": "Linux",
+    "architecture": "aarch64",
+    "python": "3.8.10",
+    "libc": [
+      "glibc",
+      "2.31"
+    ]
+  },
+  "stages": [
+    {
+      "stage": "runtime_setup",
+      "status": "PASS",
+      "code": "OK",
+      "reason": "Package-local .runtime installed offline; run bash run.sh --mode preflight, then model-check. No model inference yet."
+    }
+  ],
+  "network_used": false,
+  "system_python_modified": false,
+  "model_inference_executed": false,
+  "hardware_validated": false,
+  "installed_environment": {
+    "python": "3.11.17",
+    "numpy": "1.26.4",
+    "Pillow": "11.1.0",
+    "onnxruntime": "1.20.1",
+    "psutil": "6.1.1",
+    "providers": [
+      "AzureExecutionProvider",
+      "CPUExecutionProvider"
+    ]
+  },
+  "overall": "PASS"
+}

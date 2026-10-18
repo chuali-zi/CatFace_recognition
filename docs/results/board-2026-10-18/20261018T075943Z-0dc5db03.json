@@ -1,0 +1,220 @@
+{
+  "schema_version": 3,
+  "mode": "model-check",
+  "run_id": "20261018T075943Z-0dc5db03",
+  "started_utc": "2026-10-18T07:59:43.948159+00:00",
+  "source_commit": "23f7cbec0c23be9c61d2f8f8046e31c12463c876",
+  "package_manifest_sha256": "1508cd889f845df2580dca95edd95b2bd83230d0d801d7702743fe032a6ab06b",
+  "package_zip_sha256": null,
+  "asset_manifest_sha256": "d548e35bd8e53613b3a0707f2ec3d00d372a5fc11fdeae54ade7c95ce49a5f47",
+  "model_sha256": {
+    "detector": "5c15910dd27108d6378257518367254af943ae3e97084cd2730367bb53205694",
+    "small160": "0ac37dcc71f8575e3a9d406287095169a3f3100bdac806b58620afc23fe44dd6",
+    "large224": "1518d327a2278a95143d01f011045aed3c08ee8c66121fd8a4231ed3321c0467"
+  },
+  "environment": {
+    "system": "Linux",
+    "release": "5.10.209-phytium-embedded-v2.2",
+    "architecture": "aarch64",
+    "python": "3.11.17",
+    "implementation": "CPython",
+    "libc": [
+      "glibc",
+      "2.31"
+    ],
+    "logical_cpus": 4,
+    "free_disk_mib": 16513.7,
+    "dependencies": {
+      "numpy": "1.26.4",
+      "Pillow": "11.1.0",
+      "onnxruntime": "1.20.1",
+      "psutil": "6.1.1"
+    },
+    "camera_devices": [],
+    "hardware_claim": "Operator must identify target; architecture alone does not prove Feiteng board.",
+    "memory_mib": 3869.5,
+    "os": {
+      "ID": "ubuntu",
+      "PRETTY_NAME": "Ubuntu 20.04.6 LTS",
+      "VERSION_ID": "20.04"
+    }
+  },
+  "stages": [
+    {
+      "stage": "package_integrity",
+      "status": "PASS",
+      "code": "OK",
+      "reason": "All sealed package files match SHA256."
+    },
+    {
+      "stage": "preflight",
+      "status": "PASS",
+      "code": "OK",
+      "reason": "Candidate runtime requirements only; imports, actual CPU model load and board inference remain separate checks."
+    },
+    {
+      "stage": "assets",
+      "status": "PASS",
+      "code": "OK",
+      "reason": "Selected source/license records, file hashes and preprocessing contracts verified. Technical verification is not legal clearance for public or commercial distribution."
+    },
+    {
+      "stage": "dependencies",
+      "status": "PASS",
+      "code": "OK",
+      "reason": "Selected inference runtime import/provider check.",
+      "required_modules": [
+        "numpy",
+        "PIL",
+        "onnxruntime"
+      ],
+      "raw_log": "private/dependencies.log",
+      "exit_code": 0,
+      "error_summary": {},
+      "version_pin_match": true
+    },
+    {
+      "stage": "model_load:small160",
+      "status": "PASS",
+      "code": "OK",
+      "reason": "Actual CPU ONNX graph interfaces checked; no image inference in model-check.",
+      "raw_log": "private/load-small160.log",
+      "exit_code": 0,
+      "evidence": {
+        "loaded": true,
+        "inference_executed": false,
+        "threads": 2,
+        "gallery_bound": false,
+        "providers": {
+          "detector": [
+            "CPUExecutionProvider"
+          ],
+          "identity": [
+            "CPUExecutionProvider"
+          ]
+        },
+        "identity_input_size": 160,
+        "embedding_dim": 576
+      },
+      "error_summary": {}
+    },
+    {
+      "stage": "model_load:large224",
+      "status": "PASS",
+      "code": "OK",
+      "reason": "Actual CPU ONNX graph interfaces checked; no image inference in model-check.",
+      "raw_log": "private/load-large224.log",
+      "exit_code": 0,
+      "evidence": {
+        "loaded": true,
+        "inference_executed": false,
+        "threads": 2,
+        "gallery_bound": false,
+        "providers": {
+          "detector": [
+            "CPUExecutionProvider"
+          ],
+          "identity": [
+            "CPUExecutionProvider"
+          ]
+        },
+        "identity_input_size": 224,
+        "embedding_dim": 960
+      },
+      "error_summary": {}
+    },
+    {
+      "stage": "historical",
+      "status": "SKIP",
+      "code": "NOT_REQUESTED",
+      "reason": "No frozen historical protocol, gallery or 149-image dataset required."
+    },
+    {
+      "stage": "image_recognition",
+      "status": "SKIP",
+      "code": "NOT_REQUESTED",
+      "reason": "One-image recognition not requested."
+    },
+    {
+      "stage": "enrollment",
+      "status": "SKIP",
+      "code": "NOT_REQUESTED",
+      "reason": "No field enrollment requested."
+    },
+    {
+      "stage": "camera",
+      "status": "SKIP",
+      "code": "NOT_REQUESTED",
+      "reason": "No camera opened. Use --camera INDEX only with site consent."
+    }
+  ],
+  "simulated": false,
+  "recognition_validated": false,
+  "hardware_validated": false,
+  "operator_execution_context": "target-board",
+  "scope": "Research pipeline diagnostics only; no production recognizer, no field accuracy claim.",
+  "commands": {
+    "requested": "bash run.sh --mode model-check --models small160 large224 --threads 2 --warmup 3 --passes 1 --limit 0 --assets <ASSET_DIR> --execution-context target-board"
+  },
+  "privacy": "Only report.json, report.md and events.jsonl are collected. Raw logs/predictions/enrollment remain in private/; no images, private paths, environment variables or credentials collected.",
+  "timing_policy": {
+    "warmup": 3,
+    "passes": 1,
+    "limit": 0,
+    "first_frame": "measured separately; excluded from percentiles",
+    "samples": "raw measurements retained locally; summary counts are actual observations"
+  },
+  "platform_assessment": {
+    "compatible": true,
+    "findings": [],
+    "meaning": "Candidate runtime requirements only; imports, actual CPU model load and board inference remain separate checks."
+  },
+  "dependency_inventory": [
+    {
+      "package": "numpy",
+      "installed": "1.26.4",
+      "required": "1.26.4",
+      "state": "PIN_MATCH",
+      "import_tested": false
+    },
+    {
+      "package": "Pillow",
+      "installed": "11.1.0",
+      "required": "11.1.0",
+      "state": "PIN_MATCH",
+      "import_tested": false
+    },
+    {
+      "package": "onnxruntime",
+      "installed": "1.20.1",
+      "required": "1.20.1",
+      "state": "PIN_MATCH",
+      "import_tested": false
+    },
+    {
+      "package": "psutil",
+      "installed": "6.1.1",
+      "required": "6.1.1",
+      "state": "PIN_MATCH",
+      "import_tested": false
+    }
+  ],
+  "recovery_command": "python3 -m experiments.devicekit.bootstrap",
+  "required_resources": [
+    "ASSET_MANIFEST.json",
+    "bundle.json",
+    "provenance.json",
+    "detector/model.onnx",
+    "detector/model.onnx.json",
+    "models/small160/model.onnx",
+    "models/small160/model.json",
+    "models/large224/model.onnx",
+    "models/large224/model.json"
+  ],
+  "unrequested_work": "Unrequested modes are SKIP, not missing-resource failures.",
+  "verified_resource_count": 8,
+  "verified_resource_set_sha256": "41bc7f8faa12cab1c485e9d309ac6c34b1a21272a1396a750c9a79a072befcc0",
+  "finished_utc": "2026-10-18T07:59:46.739753+00:00",
+  "overall": "PASS",
+  "overall_meaning": "PASS means requested diagnostics completed; never production/field recognition acceptance."
+}

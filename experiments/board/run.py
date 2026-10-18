@@ -66,6 +66,19 @@ def identity_metrics(rows):
             'scope': 'First measured pass only. All query failures stay in denominators. no_cat/unusable/error are not successful unknown rejections.'}
 
 
+def telemetry_summary(rows):
+    result = {}
+    for key in ('temperature_c', 'cpu_frequency_khz'):
+        names = sorted({name for row in rows for name in row.get(key, {})})
+        result[key] = {}
+        for name in names:
+            values = [row[key][name] for row in rows if name in row.get(key, {})]
+            result[key][name] = dict(first=values[0], last=values[-1], min=min(values), max=max(values))
+    rss = [row['rss_mib'] for row in rows]
+    result['rss_mib'] = dict(first=rss[0], last=rss[-1], max=max(rss)) if rss else None
+    return result
+
+
 def worker(args, config):
     import numpy as np
     import psutil
@@ -109,24 +122,32 @@ def worker(args, config):
                       total_ms=(time.perf_counter() - begin) * 1000)
         return result
 
-    first = run_one(rows[0])
+    def observe(row):
+        try:
+            return run_one(row)
+        except Exception as exc:
+            return {'status': 'error', 'error': f'{type(exc).__name__}: {exc}'}
+
+    first = observe(rows[0])
+    warmup_errors = 0
     for i in range(args.warmup):
-        run_one(rows[i % len(rows)])
+        warmup_errors += observe(rows[i % len(rows)])['status'] == 'error'
     stages = {k: [] for k in ('decode_ms', 'detect_ms', 'identity_and_match_ms', 'total_ms')}
     proc = psutil.Process()
     cpu_before = proc.cpu_times()
     begin = time.perf_counter()
     predictions = []
+    pass_summaries = []
+    telemetry_rows = []
     errors = 0
     with (args.out / 'measurements.jsonl').open('w', encoding='utf-8') as measured, (args.out / 'telemetry.jsonl').open('w', encoding='utf-8') as telemetry:
         for repeat in range(args.passes):
+            pass_rows = []
             for index, row in enumerate(rows):
-                try:
-                    result = run_one(row)
-                except Exception as exc:
-                    result = {'status': 'error', 'error': f'{type(exc).__name__}: {exc}'}
-                    errors += 1
+                result = observe(row)
+                errors += result['status'] == 'error'
                 result.update(sample_id=row['sample_id'], path=row['path'], true_cat_id=row['cat_id'], role=row['role'], repeat=repeat)
+                pass_rows.append(result)
                 measured.write(json.dumps(result, ensure_ascii=False, allow_nan=False) + '\n')
                 measured.flush()
                 if repeat == 0:
@@ -134,10 +155,17 @@ def worker(args, config):
                 for key in stages:
                     if key in result and (key != 'identity_and_match_ms' or result['status'] in ('known', 'unknown')):
                         stages[key].append(result[key])
-                telemetry.write(json.dumps({'elapsed_s': time.perf_counter() - begin,
-                                            'rss_mib': proc.memory_info().rss / 2**20, **sensors()}) + '\n')
+                reading = {'elapsed_s': time.perf_counter() - begin,
+                           'rss_mib': proc.memory_info().rss / 2**20, **sensors()}
+                telemetry_rows.append(reading)
+                telemetry.write(json.dumps(reading) + '\n')
                 if (index + 1) % 10 == 0 or index + 1 == len(rows):
                     print(f'{args.worker} t{args.threads[0]} pass {repeat+1}/{args.passes}: {index+1}/{len(rows)}', flush=True)
+            totals = [r['total_ms'] for r in pass_rows if 'total_ms' in r]
+            pass_summaries.append({'repeat': repeat, 'queries': len(pass_rows),
+                'errors': sum(r['status'] == 'error' for r in pass_rows),
+                'total_p50_ms': float(np.percentile(totals, 50)) if totals else None,
+                'total_p95_ms': float(np.percentile(totals, 95)) if totals else None})
     elapsed = time.perf_counter() - begin
     cpu_after = proc.cpu_times()
     memory = proc.memory_info()
@@ -154,7 +182,9 @@ def worker(args, config):
                'threshold': gallery['threshold'], 'model_sha256': gallery['model_sha256'],
                'crop_pipeline': gallery['crop_pipeline'],
                'providers': {'detector': detector.session.get_providers(), 'identity': encoder.session.get_providers()},
-               'model_load_ms': load_ms, 'first_frame_ms': first['total_ms'],
+               'model_load_ms': load_ms, 'first_frame_ms': first.get('total_ms'),
+               'first_frame_status': first['status'], 'warmup_errors': warmup_errors,
+               'pass_summaries': pass_summaries, 'telemetry': telemetry_summary(telemetry_rows),
                'latency_ms': latency, 'peak_rss_mib': peak / 2**20,
                'elapsed_s': elapsed, 'completed_fps': sum(len(v) for k, v in stages.items() if k == 'total_ms') / elapsed,
                'cpu_percent_one_core': 100 * (cpu_after.user + cpu_after.system - cpu_before.user - cpu_before.system) / elapsed,
@@ -162,7 +192,7 @@ def worker(args, config):
                'timing_scope': 'total includes file read, EXIF/RGB decode, detection/crop, identity/match; excludes model load and output writes. Repeated reads may use OS file cache. Identity timing conditional on usable single crop. Errors have no latency; see errors count.',
                'dataset': config['dataset'], 'limited_run': bool(args.limit)}
     save(args.out / 'summary.json', summary)
-    return 1 if errors else 0
+    return 1 if errors or warmup_errors or first['status'] == 'error' else 0
 
 
 def main():

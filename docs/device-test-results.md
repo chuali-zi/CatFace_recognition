@@ -21,3 +21,13 @@ bootstrap报告同为schema3，但mode=bootstrap，记录系统解释器和真�
 2026-10-18原报告为schema2，仍可按原阶段解析。其preflight BLOCKED不能改写成模型失败；7项SKIP无模型/性能信息。新报告需同时留存原ZIP、报告ZIP SHA、设备型号与每次实际命令。model-check不能产出DIR/FPIR，单帧不能产出有意义的P50/P95；缺真实身份/独立场次时不能编造现场指标。
 
 有网主机可重准备运行时：`python -m experiments.devicekit.prepare_runtime --out 新目录`。它下载固定官方运行时与11项目标wheel，按官方SHA/PyPI元数据核验后生成锁文件；不会执行ARM程序。完整交付使用`experiments.devicekit.release`，要求已核验的旧包、封存运行时及新目录，按白名单复制，不使用整个工作树或旧验收结果充当新包验收。
+
+## v4一次运行的汇总包
+
+`bash run-all.sh`使用suite入口，单项诊断仍沿用schema3。suite的`report.json`为schema1、mode=suite，描述安装、历史完整矩阵、重复/线程一致性以及可选field/camera的状态；不与单项schema3混读。
+
+默认两模型、1/2/4线程、三轮，每组149个独立查询，计时共2682次（不含首帧/预热）。DIR/FPIR只取第一轮，失败仍在分母。`--limit`或自选模型/线程用于排错，参数及limited_run保留，不能宣称默认六组已完成。
+
+唯一回传ZIP含suite的report.json/report.md、summary.json/summary.csv、observations.jsonl和实际执行的各项脱敏诊断JSON（安装时另附bootstrap.json）。匿名观测仅含稳定sample-NNN/cat-NNN、角色/状态/分数/计时/轮次，不含图片路径、原始身份标签、照片、图库或原始日志。summary保留每轮P50/P95、传感器首末/极值、CPU provider、首帧、内存和同模型跨线程/重复决策变化。传感器不可用为空字典。
+
+private留在设备，包含原始测量、遥测和日志；ZIP不遍历该目录。某配置失败仍继续其他配置并回传部分结果。套件PASS只表示请求的测量完成；一致性变化BLOCKED需要核查数值/阈值，既有开发集表现不等于现场效果。

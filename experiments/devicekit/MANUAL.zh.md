@@ -1,6 +1,6 @@
 # 科研测试手册
 
-本包不控制门，不依赖云业务/LLM。检测与身份核心代码/模型保持冻结。v3恢复旧交付的devicekit工具并修复平台诊断、内部shell入口、跨平台清单路径；新增独立ARM运行时离线准备和报告schema3，源码来源与哈希见SOURCE_MANIFEST.json。
+本包不控制门，不依赖云业务/LLM。检测与身份核心代码/模型保持冻结。v3提供独立ARM运行时；v4补齐冻结图片/图库与`bash run-all.sh`统一入口，自动执行两模型×三线程×三轮并打包一个结果ZIP。源码来源与哈希见SOURCE_MANIFEST.json。
 
 | 模式 | 真正前提 | 结果含义 |
 |---|---|---|
@@ -9,7 +9,7 @@
 | enroll | 上述+真实身份/场次已确认的登记/陌生校准图 | 本地建库与校准；非现场准确率 |
 | recognize | 上述+匹配且有阈值证据的图库和实际单图 | 一帧诊断；不产生准确率/P50/P95 |
 | field | 上述+独立场次/陌生身份查询及真值 | 按真实分母诊断，非生产认证 |
-| historical/smoke | 冻结图库/协议/证据及149原图 | 公开图历史诊断；此ZIP不含该数据 |
+| historical/smoke | 冻结图库/协议/证据及149原图 | 公开图历史诊断；v4包含，v3不含 |
 | camera | 现场同意、cv2、真实设备/现有权限 | 只抓一帧后丢弃，不自动打开 |
 
 ## 模型契约
@@ -22,7 +22,7 @@ score不是概率。模型/检测配置/裁剪/登记样本改变须重新校准
 
 requirements-device.txt保留v2固定11项，其中NumPy1.26.4、Pillow11.1.0、ORT1.20.1、psutil6.1.1。本机x86_64 Python3.11已核验安装/导入；推理不需要PyTorch或GPU。camera另需cv2。
 
-2026-10-18实测已提供Ubuntu20.04.6、aarch64、glibc2.31、系统Python3.8.10；相机与识别未执行。v3新增ARM64 CPython3.11.17及匹配wheels，bootstrap仅包内离线安装，仍需实际设备验证动态库/CPU指令。允许网络时在自己的venv中使用pip --only-binary=:all:安装；失败保留报告，不自动sudo/改组/换驱动。离线准备必须先确认设备信息，可用experiments.devicekit.dependencies download的显式--arch/--python参数，再核查wheel清单。示例aarch64/Python3.11不等于已核实设备。
+2026-10-18板端已提供Ubuntu20.04.6、aarch64、glibc2.31、系统Python3.8.10。修复后的包内ARM64 CPython3.11.17离线安装、固定依赖导入和两模型CPU加载已PASS；实际图片推理与相机尚未执行。离线准备可用experiments.devicekit.dependencies download的显式--arch/--python参数，必须匹配真实目标环境。
 
 ## 用途与回传
 

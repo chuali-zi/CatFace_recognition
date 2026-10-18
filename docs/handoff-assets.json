@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-18",
+  "paths_relative_to": "project root",
+  "scope": "Metadata only; actual weights/photos/runtime are not in public Git. Copy data and selected experiments/runs directories preserving relative paths.",
+  "data_directory_bytes_approx": 21730000000,
+  "files": [
+    {
+      "path": "data/clean.identity.jsonl",
+      "exists": true,
+      "bytes": 999773,
+      "sha256": "f2fb52816a10e23fdf4de6330304609d08d15c670d2fac7aecdd0298c8b282e2"
+    },
+    {
+      "path": "data/samples.expanded.jsonl",
+      "exists": true,
+      "bytes": 13354462,
+      "sha256": "0d225ff5a082fb7069fc0553533724893f93e868bd1568975d46803cb2225a9e"
+    },
+    {
+      "path": "data/manual-review.csv",
+      "exists": true,
+      "bytes": 21259,
+      "sha256": "197accd838ea7068c726551344e587a5f688ac9104bebb927ee98269245c9baf"
+    },
+    {
+      "path": "data/manual-group-review.csv",
+      "exists": true,
+      "bytes": 17697,
+      "sha256": "60c96d6f2164ce6229a0dc82ea2d334ab910a62b73c5558d4c3e54c3f7059795"
+    },
+    {
+      "path": "experiments/runs/edge160/protocol.json",
+      "exists": true,
+      "bytes": 247253,
+      "sha256": "732f155eb3a1cbc264b6ff1ed3de8b0bf34ea196255601e382123d387e8c9bd4"
+    },
+    {
+      "path": "experiments/runs/edge160/baseline/model.onnx",
+      "exists": true,
+      "bytes": 3718076,
+      "sha256": "0ac37dcc71f8575e3a9d406287095169a3f3100bdac806b58620afc23fe44dd6"
+    },
+    {
+      "path": "experiments/runs/edge160/baseline/model.json",
+      "exists": true,
+      "bytes": 899,
+      "sha256": "715db243031e410b7f5ba7f3484dbff99476634856dab263a36516c79951de85"
+    },
+    {
+      "path": "experiments/runs/backbone-study/large224/model.onnx",
+      "exists": true,
+      "bytes": 11878167,
+      "sha256": "1518d327a2278a95143d01f011045aed3c08ee8c66121fd8a4231ed3321c0467"
+    },
+    {
+      "path": "experiments/runs/backbone-study/large224/model.json",
+      "exists": true,
+      "bytes": 1066,
+      "sha256": "dd7d3c01de17b1b285df9f1975851361a9056d7ea7b56b2ad4f9d905807f9a84"
+    },
+    {
+      "path": "experiments/runs/detection-cpu/onnx/model.onnx",
+      "exists": true,
+      "bytes": 13834067,
+      "sha256": "5c15910dd27108d6378257518367254af943ae3e97084cd2730367bb53205694"
+    },
+    {
+      "path": "experiments/runs/detection-cpu/onnx/model.onnx.json",
+      "exists": true,
+      "bytes": 1464,
+      "sha256": "29f71ffb8f44de7eb21877b45b2988d53a633a6ca9ecc6b73993a0d79275cd15"
+    },
+    {
+      "path": "experiments/runs/crop-study/small160/fixed/detected.gallery.json",
+      "exists": true,
+      "bytes": 83465,
+      "sha256": "9f7d0d4b140dc11271869d193f298865bbfb25e8417e1d599706be37ef4e170f"
+    },
+    {
+      "path": "experiments/runs/crop-study/small160/fixed/detected.json",
+      "exists": true,
+      "bytes": 119827,
+      "sha256": "3952a35405c38f06cb0b823e0c90576f8f94e208cf696a3f90920d4244229e15"
+    },
+    {
+      "path": "experiments/runs/crop-study/large224/fixed/detected.gallery.json",
+      "exists": true,
+      "bytes": 139627,
+      "sha256": "ab44e50bc01859807cc6198f6f7c1991159fc5cea30112a734b48b3c2d7e2662"
+    },
+    {
+      "path": "experiments/runs/crop-study/large224/fixed/detected.json",
+      "exists": true,
+      "bytes": 120110,
+      "sha256": "93bbae39e44f4d23e2ddd7f574a55fe36f064095b9b5bb5001e04d0089cc136d"
+    },
+    {
+      "path": "experiments/runs/board-runtime-20261018/MANIFEST.json",
+      "exists": true,
+      "bytes": 2916,
+      "sha256": "1945aa3df970ea0ad8c3a8dcb8a1239836b172acffc69ea4d79639f103e331f4"
+    },
+    {
+      "path": "experiments/runs/board-runtime-20261018/RUNTIME.json",
+      "exists": true,
+      "bytes": 4446,
+      "sha256": "5e7b4b25042d0d06ed0e8f861a684f5f495a7b3569baf506382a9ef38459f055"
+    },
+    {
+      "path": "experiments/runs/v2-integration-20261013/private-historical-assets/ASSET_MANIFEST.json",
+      "exists": true,
+      "bytes": 25882,
+      "sha256": "43844b830e271e3892b53d4cce116b488f1ce63aa3c39bdd23d051863b2b8683"
+    },
+    {
+      "path": "delivery/catface-test-kit-20261013/CatFace-完整测试包-含真实模型.zip",
+      "exists": true,
+      "bytes": 27433880,
+      "sha256": "7143484ec2c1a95c87ea589e7d1aebcd70ea31003d431a8c052a0997ffe30309"
+    }
+  ]
+}

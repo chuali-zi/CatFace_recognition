@@ -1,0 +1,24 @@
+{
+  "source": "User-supplied board reports, 2026-10-18; report content retained, no images or raw logs",
+  "outer_sha256": "312ff1c709a00b328db803bfb1c7abd1a7eeb345aa112a47a8d1d5c7e4280eaa",
+  "records": [
+    {
+      "report": "20261018T075714Z-bootstrap-f2c81bec.json",
+      "original_zip_sha256": "f8de588222fed943cd7d452d0f6014e297d070c757ab277f1b58d222b1691bec",
+      "zip_crc_pass": true,
+      "events_match": true
+    },
+    {
+      "report": "20261018T075934Z-9d77f03a.json",
+      "original_zip_sha256": "f7da0186ba5fcb4b1d62bb2f4faa7f48445763527b435f75d3fab3dc4d2cb848",
+      "zip_crc_pass": true,
+      "events_match": true
+    },
+    {
+      "report": "20261018T075943Z-0dc5db03.json",
+      "original_zip_sha256": "54ad96e15e0a1b28b32921205c7e28908dd5697fb63b6a7d5248b25e61410245",
+      "zip_crc_pass": true,
+      "events_match": true
+    }
+  ]
+}

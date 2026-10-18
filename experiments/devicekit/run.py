@@ -78,9 +78,27 @@ def main(argv=None):
         with (out/'events.jsonl').open('a',encoding='utf-8') as f: f.write(json.dumps(row,ensure_ascii=False)+'\n')
         print(f'{name}: {status} {code} {reason}',flush=True)
         save(out/'report.json',report)
-    def child(command,log,timeout=3600):
+    def child(command,log,timeout=3600,progress=False):
         with (private/log).open('w',encoding='utf-8') as handle:
             try:
+                if progress:
+                    with (private/log).open(encoding='utf-8',errors='replace') as reader:
+                        process=subprocess.Popen(command,cwd=ROOT,stdout=handle,stderr=subprocess.STDOUT,
+                            env=os.environ | {'PYTHONPATH':str(ROOT/'src')+os.pathsep+str(ROOT),'PYTHONUNBUFFERED':'1','OPENBLAS_NUM_THREADS':'1','OMP_NUM_THREADS':'1','MKL_NUM_THREADS':'1'})
+                        started=time.monotonic()
+                        try:
+                            while process.poll() is None:
+                                text=reader.read()
+                                if text: print(text,end='',flush=True)
+                                if time.monotonic()-started>timeout:
+                                    process.kill(); process.wait(); return 124
+                                time.sleep(.2)
+                            text=reader.read()
+                            if text: print(text,end='',flush=True)
+                            return process.returncode
+                        finally:
+                            if process.poll() is None:
+                                process.kill(); process.wait()
                 result=subprocess.run(command,cwd=ROOT,stdout=handle,stderr=subprocess.STDOUT,timeout=timeout,
                     env=os.environ | {'PYTHONPATH':str(ROOT/'src')+os.pathsep+str(ROOT),'PYTHONUNBUFFERED':'1','OPENBLAS_NUM_THREADS':'1','OMP_NUM_THREADS':'1','MKL_NUM_THREADS':'1'})
                 return result.returncode
@@ -235,15 +253,17 @@ def main(argv=None):
                         name=f'{model}-t{threads}'; target=private/name; target.mkdir()
                         limit=4 if a.mode=='smoke' else a.limit
                         command=[sys.executable,'-m','experiments.board.run','--bundle',str(assets),'--out',str(target),'--worker',model,'--threads',str(threads),'--warmup',str(a.warmup),'--passes',str(a.passes),'--limit',str(limit)]
-                        rc=child(command,name+'.log')
+                        print(f'Running {name}: {a.passes} pass(es), {limit or 149} queries/pass; please wait.',flush=True)
+                        rc=child(command,name+'.log',timeout=14400,progress=True)
                         summary_path=target/'summary.json'
                         if rc or not summary_path.exists():
-                            stage('historical:'+name,'FAIL','E_INFERENCE','Historical replay failed; no inference scores invented.',exit_code=rc,raw_log='private/'+name+'.log')
+                            stage('historical:'+name,'FAIL','E_INFERENCE','Historical replay failed; no inference scores invented.',exit_code=rc,raw_log='private/'+name+'.log',
+                                  error_summary=error_summary((private/(name+'.log')).read_text(encoding='utf-8',errors='replace')))
                             continue
                         summary=json.loads(summary_path.read_text())
                         stage('image_smoke:'+name,'PASS' if summary['latency_ms']['identity_and_match_ms']['count'] else 'BLOCKED','OK' if summary['latency_ms']['identity_and_match_ms']['count'] else 'E_NO_IDENTITY_SAMPLE','Actual replay; identity smoke requires a usable single-cat branch.',raw_log='private/'+name+'.log',raw_measurements='private/'+name+'/measurements.jsonl',identity_branch_samples=summary['latency_ms']['identity_and_match_ms']['count'])
                         stage('known_unknown:'+name,'PASS','OK','Historical measurement, not field accuracy acceptance.',metrics=summary['metrics'],threshold=summary['threshold'],limited_run=summary['limited_run'])
-                        stage('benchmark:'+name,'PASS','OK','Observed timings; no board speed extrapolation.',**{k:summary[k] for k in ('latency_ms','model_load_ms','first_frame_ms','peak_rss_mib','providers','unique_queries','passes','warmup','timing_scope','limited_run')})
+                        stage('benchmark:'+name,'PASS','OK','Observed timings; no board speed extrapolation.',**{k:summary[k] for k in ('latency_ms','model_load_ms','first_frame_ms','peak_rss_mib','providers','unique_queries','passes','warmup','timing_scope','limited_run','pass_summaries','telemetry') if k in summary})
             else:
                 stage('historical','BLOCKED','E_PREREQUISITE','Historical replay needs frozen protocol, gallery evidence and all 149 images, plus selected models.')
         else:
