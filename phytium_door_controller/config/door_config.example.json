@@ -1,0 +1,47 @@
+{
+  "backend": "mock",
+  "gpio": {
+    "motor_open": 492,
+    "motor_close": 491,
+    "motor_enable_r": 443,
+    "motor_enable_l": 450,
+    "limit_open": 444,
+    "limit_close": 445,
+    "emergency_stop": 510,
+    "buzzer_status": 474
+  },
+  "timing": {
+    "motor_run_timeout_sec": 12.0,
+    "relay_settle_sec": 0.2,
+    "poll_interval_sec": 0.1,
+    "web_status_poll_ms": 1000
+  },
+  "mock": {
+    "simulate_limits": true,
+    "mock_travel_sec": 3.0
+  },
+  "safety": {
+    "limit_switch_active_low": true,
+    "emergency_stop_active_low": true,
+    "motor_direction_active_high": true,
+    "motor_enable_active_high": true,
+    "buzzer_active_high": true
+  },
+  "web": {
+    "host": "127.0.0.1",
+    "port": 8080,
+    "static_dir": "static",
+    "log_tail_limit": 50,
+    "control_token": ""
+  },
+  "ai": {
+    "enabled": false,
+    "provider": "rules",
+    "timeout_sec": 10,
+    "allowed_commands": ["open", "close", "stop", "reset"]
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "logs/door_controller.log"
+  }
+}

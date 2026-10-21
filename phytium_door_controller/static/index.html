@@ -1,0 +1,51 @@
+<!--
+机械门控制页面：纯 HTML/CSS/JavaScript，无 React/Vue。
+通过 fetch 调用本地 Web API，不直接操作 GPIO。
+-->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>飞腾派机械门控制</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="panel">
+    <h1>机械门控制面板</h1>
+    <p class="hint">当前后端：<span id="backend">-</span>；状态每 1 秒刷新。</p>
+
+    <section class="status-card">
+      <h2>当前状态</h2>
+      <div id="state" class="state">unknown</div>
+      <ul>
+        <li>开门限位：<span id="limit-open">-</span></li>
+        <li>关门限位：<span id="limit-close">-</span></li>
+        <li>急停：<span id="estop">-</span></li>
+      </ul>
+    </section>
+
+    <section class="buttons">
+      <button id="btn-open">开门</button>
+      <button id="btn-close">关门</button>
+      <button id="btn-stop" class="warn">停止</button>
+      <button id="btn-reset" class="danger">复位</button>
+    </section>
+
+    <section class="ai-box">
+      <h2>AI 指令入口</h2>
+      <p class="hint">示例：开门 / 关门 / 停止 / 复位。AI 只能走本地安全 API。</p>
+      <input id="ai-text" type="text" placeholder="输入指令，例如：请开门">
+      <button id="btn-ai">发送 AI 指令</button>
+      <pre id="ai-result"></pre>
+    </section>
+
+    <section>
+      <h2>最近日志</h2>
+      <pre id="logs" class="logs"></pre>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
